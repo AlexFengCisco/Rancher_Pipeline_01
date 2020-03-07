@@ -6,4 +6,3 @@
     deploy docker iamge to k8s cluster
     
     ok
-    ..
