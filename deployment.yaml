@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+  name: alexospipeline
+  namespace: alexnamespace01
+spec:
+  containers:
+  - image: alexfengcisco/Rancher_Pipeline_01
+    imagePullPolicy: Always
+    name: alexospipeline01
+    ports:
+    - containerPort: 8000
+      name: 8000tcp02
+      protocol: TCP
+  imagePullSecrets:
+  - name: dockerhub
