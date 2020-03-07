@@ -28,6 +28,10 @@ spec:
       - image: alexfengcisco/alex_os:v01
         imagePullPolicy: Always
         name: alexpipeline
+        ports:
+        - containerPort: 8000
+          name: 8000tcp02
+          protocol: TCP
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
