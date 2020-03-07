@@ -5,7 +5,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: alexfengcisco/alex_os
-      pushRemote: true
       registry: index.docker.io
   - applyYamlConfig:
       path: ./deployment.yaml
