@@ -50,4 +50,23 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alexpipeline
+  namespace: alexnamespace01
+spec:
+  clusterIP: None
+  ports:
+  - name: default
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-alexnamespace01-alexpipeline
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
 
