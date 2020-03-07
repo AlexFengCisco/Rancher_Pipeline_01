@@ -69,4 +69,18 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alexpipeline
+  namespace: alexnamespace01
+spec:
+  rules:
+  - host: alexpipeline.alexnamespace01.10.75.58.92.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: alexpipeline
+          servicePort: 8000
 
