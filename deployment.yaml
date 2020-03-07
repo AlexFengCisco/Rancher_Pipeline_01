@@ -25,7 +25,7 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-alexnamespace01-alexpipeline
     spec:
       containers:
-      - image: alexfengcisco/alex_os:v01
+      - image: alex_os:v01
         imagePullPolicy: Always
         name: alexpipeline
         resources: {}
