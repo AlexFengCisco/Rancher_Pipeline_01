@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
-  name: alexospipeline
+  name: alexospipeline01
   namespace: alexnamespace01
 spec:
   containers:
-  - image: alexfengcisco/alexpipeline01
-    name: alexospipeline
-  imagePullSecrets:
-  - name: dockerhub
+  - image: alexpipeline01
+    name: alexospipeline01
+
