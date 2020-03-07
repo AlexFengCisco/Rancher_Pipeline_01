@@ -1,5 +1,5 @@
 FROM alexfengcisco/alex_os
 
-COPY . /app
+COPY index.html /index.html
 
 
