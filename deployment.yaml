@@ -8,7 +8,7 @@ metadata:
   namespace: alexnamespace01
 spec:
   progressDeadlineSeconds: 600
-  replicas: 1
+  replicas: 3
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -25,7 +25,7 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-alexnamespace01-alexpipeline
     spec:
       containers:
-      - image: alexfengcisco/alex_os:v02
+      - image: alexfengcisco/alex_os:v03
         imagePullPolicy: Always
         name: alexpipeline
         ports:
