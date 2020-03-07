@@ -1,4 +1,4 @@
-FROM alexfengcisco/alex_os
+FROM centos
 
 COPY . /app
 
