@@ -4,12 +4,7 @@ kind: Deployment
   namespace: alexnamespace01
 spec:
   containers:
-  - image: alexfengcisco/Rancher_Pipeline_01
-    imagePullPolicy: Always
-    name: alexospipeline01
-    ports:
-    - containerPort: 8000
-      name: 8000tcp02
-      protocol: TCP
+  - image: alexfengcisco/alexpipeline01
+    name: alexospipeline
   imagePullSecrets:
   - name: dockerhub
