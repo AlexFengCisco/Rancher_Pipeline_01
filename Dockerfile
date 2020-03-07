@@ -1,3 +1,3 @@
-FROM alexfengcisco/alex_os
+FROM ubuntu
 
-COPY index.html /index.html
+#COPY index.html /index.html
