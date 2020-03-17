@@ -5,4 +5,4 @@
     push to git and trigger pipelne stage 
     deploy docker iamge to k8s cluster
     
-    ok version 02 
+    ok version 03
