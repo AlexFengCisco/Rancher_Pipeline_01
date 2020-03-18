@@ -18,6 +18,7 @@
             }
             steps {
                 echo "b1 branch "
+                sh 'env'
             }
         }
         stage('test B1 v06') {
