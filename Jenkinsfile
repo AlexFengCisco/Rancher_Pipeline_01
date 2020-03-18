@@ -19,8 +19,13 @@
             steps {
                 echo "b1  branch "
                 sh 'env'
-                sh 'git tag -l'
-                echo tag
+                sh 'git describe --tags --abbrev=0'
+                script {
+                    tag = sh (
+                    script: 'git describe --tags --abbrev=0',
+                    returnStdout: true
+                    ).trim()
+                    }
                 //script {
                     //tag = 'v06'
                     //tag = sh (
