@@ -21,10 +21,11 @@
                 sh 'env'
                 sh 'git describe --tags --abbrev=0'
                 script {
-                    tag = sh (
-                    script: 'git describe --tags --abbrev=0',
-                    returnStdout: true
-                    ).trim()
+                    tag = 'v06'
+                    //tag = sh (
+                    //script: 'git describe --tags --abbrev=0',
+                    //returnStdout: true
+                    //).trim()
                     }
             }
         }
