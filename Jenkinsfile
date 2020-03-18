@@ -20,6 +20,7 @@
                 echo "b1  branch "
                 sh 'env'
                 sh 'git tag -l'
+                echo tag
                 //script {
                     //tag = 'v06'
                     //tag = sh (
