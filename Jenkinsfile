@@ -20,13 +20,13 @@
                 echo "b1  branch "
                 sh 'env'
                 sh 'git tag -l'
-                script {
-                    tag = 'v06'
+                //script {
+                    //tag = 'v06'
                     //tag = sh (
                     //script: 'git describe --tags --abbrev=0',
                     //returnStdout: true
                     //).trim()
-                    }
+                   // }
             }
         }
         stage('test B1 v06') {
