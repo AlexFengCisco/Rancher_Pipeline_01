@@ -1,54 +1,33 @@
-pipeline {
+ pipeline {
     agent any
     environment {
         remote_dir = "/opt/hello"
     }
-    triggers{
-        gitlab( triggerOnPush: true,
-                triggerOnMergeRequest: true,
-                branchFilterType: 'All',
-                secretToken: "${env.git_token}")
-    }
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10'))
-        disableConcurrentBuilds()
-        timeout(time: 10, unit: 'MINUTES')
-        timestamps()
-    }
     stages {
-        stage('部署到测试环境'){
-            when {
-                branch 'test'
-            }
-            steps{
-                sh '''
-                    rsync -avz --progress -e 'ssh -p 22' --exclude='Jenkinsfile' --exclude='.git' --delete ${WORKSPACE}/  root@192.168.3.68:$remote_dir
-                '''
-            }
-        }
-        stage('部署到线上环境') {
+        stage('test master'){
             when {
                 branch 'master'
             }
-            steps {
-                sh '''
-                    rsync -avz --progress -e 'ssh -p 22' --exclude='Jenkinsfile' --exclude='.git' --delete ${WORKSPACE}/  root@192.168.3.61:$remote_dir
-                '''
+            steps{
+                echo "master branch event"
             }
         }
-        stage('delete') {
+        stage('test B1') {
+            when {
+                branch 'B1'
+            }
             steps {
-                echo '清理工作目录'
-                cleanWs()
+                echo "b1 branch "
             }
         }
+
     }
     post {
         success {
-            sh "echo 成功了"
+            sh "echo ok"
         }
         failure {
-            sh "echo 失败了"
+            sh "echo failure"
         }
     }
 }
