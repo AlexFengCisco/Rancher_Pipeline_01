@@ -16,9 +16,7 @@
             }
             steps{
                 echo "master branch event"
-
-                echo "b1  branch "
-                sh 'env'
+                //sh 'env'
                 sh 'git describe --tags --abbrev=0'
                 //echo $BUILD_TAG
                 script {
