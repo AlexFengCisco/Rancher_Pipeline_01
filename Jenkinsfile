@@ -40,7 +40,7 @@
                 expression { tag =='v04' }
             }
             steps {
-                echo "b1 branch  v04 "
+                echo "b1 branch   v04 "
             }
         }
     }
