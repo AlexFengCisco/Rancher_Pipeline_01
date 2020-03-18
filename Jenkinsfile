@@ -25,14 +25,14 @@
                 echo "b1  branch "
                 sh 'env'
                 sh 'git describe --tags --abbrev=0'
-                echo $BUILD_TAG
-                //script {
+                #echo $BUILD_TAG
+                script {
                     //tag = 'v06'
-                    //tag = sh (
-                    //script: 'git describe --tags --abbrev=0',
-                    //returnStdout: true
-                    //).trim()
-                   // }
+                    tag = sh (
+                    script: 'git describe --tags --abbrev=0',
+                    returnStdout: true
+                    ).trim()
+                    }
             }
         }
         stage('test B1 v06') {
