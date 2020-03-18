@@ -35,9 +35,9 @@
                     }
             }
         }
-        stage('test B1 v06') {
+        stage('test B1 v04') {
             when {
-                tag 'v04'
+                expression { tag =='v04' }
             }
             steps {
                 echo "b1 branch  v04 "
