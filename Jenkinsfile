@@ -20,7 +20,14 @@
                 echo "b1 branch "
             }
         }
-
+        stage('test B1 v06') {
+            when {
+                tag 'v06'
+            }
+            steps {
+                echo "b1 branch  v06 "
+            }
+        }
     }
     post {
         success {
