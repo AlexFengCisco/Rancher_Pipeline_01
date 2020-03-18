@@ -37,10 +37,10 @@
         }
         stage('test B1 v06') {
             when {
-                tag 'v06'
+                tag 'v04'
             }
             steps {
-                echo "b1 branch  v06 "
+                echo "b1 branch  v04 "
             }
         }
     }
