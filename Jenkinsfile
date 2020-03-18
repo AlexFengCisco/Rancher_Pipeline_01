@@ -20,6 +20,14 @@
                 echo "b1 branch "
             }
         }
+        stage('B1 beta') {
+            when {
+                branch 'B1beta'
+            }
+            steps {
+                echo "b1 branch beta "
+            }
+        }
 
     }
     post {
