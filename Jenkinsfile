@@ -5,7 +5,9 @@
     }
     stages {
         stage('pull code'){
-            git credentialsId: 'a8a03def-7c5a-4cea-b38e-4efc58052fc5', url: 'https://github.com/AlexFengCisco/Rancher_Pipeline_01.git'
+            steps{
+                git credentialsId: 'a8a03def-7c5a-4cea-b38e-4efc58052fc5', url: 'https://github.com/AlexFengCisco/Rancher_Pipeline_01.git'
+            }
         }
         stage('test master'){
             when {
