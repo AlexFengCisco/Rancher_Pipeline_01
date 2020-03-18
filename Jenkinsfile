@@ -17,7 +17,7 @@
                 branch 'B1'
             }
             steps {
-                echo "b1 branch "
+                echo "b1  branch "
                 sh 'env'
                 sh 'git tag -l'
                 script {
