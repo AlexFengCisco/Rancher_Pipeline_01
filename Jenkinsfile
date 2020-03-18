@@ -20,12 +20,7 @@
                 echo "b1  branch "
                 sh 'env'
                 sh 'git describe --tags --abbrev=0'
-                script {
-                    tag = sh (
-                    script: 'git describe --tags --abbrev=0',
-                    returnStdout: true
-                    ).trim()
-                    }
+                echo $BUILD_TAG
                 //script {
                     //tag = 'v06'
                     //tag = sh (
